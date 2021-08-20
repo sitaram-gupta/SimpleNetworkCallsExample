@@ -9,7 +9,14 @@ import UIKit
 
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+    
+    
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    let userDefaults = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +26,38 @@ class ViewController: UIViewController {
         
         //                        getData(from: url)
         //        getDataUsingAlamofire(from: url)
-        
+        saveButton.layer.cornerRadius = 12
         
         getDataFromMyData()
         
+//        textField.delegate = self
+        textView.delegate = self
+        
+        if let value = userDefaults.value(forKey: "name") as? String{
+            label.text = value
+        }
+        
     }
+    // This is for the text field of one line text only
+//    private func textFieldShouldReturn(_ textField: UITextField) -> String {
+//        userDefaults.setValue(textField.text, forKey: "name")
+//        textField.resignFirstResponder() // to hide keyboard after return tap
+//
+//        return (textField.text)!
+//    }
+    
+   
+//    func textViewDidBeginEditing(textView: UITextView) {
+//        textView.text = String()
+//    }
+    
+    
+    @IBAction func saveText(_ sender: Any) {
+        userDefaults.setValue(textView.text, forKey: "name")
+        textView.text = String()
+        print("Saved")
+    }
+    
     
     private   func getDataFromMyData(){
         getUpdateInfo { (response) in
@@ -35,7 +69,6 @@ class ViewController: UIViewController {
     }
     
     func getUpdateInfo(completion: @escaping (_ response: [ApiResponse])->Void, failure: @escaping(_ error: Error)->()){
-        //        return RequestToken.request(urlType: .forceUpdate, method: .get, header: nil, completion: completion)
         AF.request(URLPath.myData.urlString, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).responseData { (response) in
             switch response.result{
             case .failure(let error):

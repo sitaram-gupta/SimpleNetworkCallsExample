@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet weak var customSaveButton: UIButton!
+    
+    var VC = CustomViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +74,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             print(error)
             print(error.localizedDescription)
         }
+    }
+    
+    @IBAction func customSave(_ sender: Any) {
+        present(VC, animated: true, completion: nil)
     }
     
     func getUpdateInfo(completion: @escaping (_ response: [ApiResponse])->Void, failure: @escaping(_ error: Error)->()){

@@ -20,6 +20,9 @@
 		C44E5CD726CD0D1A004E0A8E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E5CD326CD0D19004E0A8E /* Address.swift */; };
 		C44E5CD826CD0D1A004E0A8E /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E5CD426CD0D19004E0A8E /* Geo.swift */; };
 		C44E5CD926CD0D1A004E0A8E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E5CD526CD0D19004E0A8E /* ApiResponse.swift */; };
+		C44E5D0326CF93D0004E0A8E /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E5D0126CF93D0004E0A8E /* CustomViewController.swift */; };
+		C44E5D0426CF93D0004E0A8E /* CustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44E5D0226CF93D0004E0A8E /* CustomViewController.xib */; };
+		C44E5D0726CF9902004E0A8E /* CustomDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E5D0626CF9902004E0A8E /* CustomDetails.swift */; };
 		DD8A8E5B195B56AEF8B6FC00 /* Pods_SimpleNetworkCallsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DF72F3B7A7EE100F0C5B4A /* Pods_SimpleNetworkCallsExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		C44E5CD326CD0D19004E0A8E /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = ../../../Downloads/codegen_611cd57ed177c/Address.swift; sourceTree = "<group>"; };
 		C44E5CD426CD0D19004E0A8E /* Geo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geo.swift; path = ../../../Downloads/codegen_611cd57ed177c/Geo.swift; sourceTree = "<group>"; };
 		C44E5CD526CD0D19004E0A8E /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResponse.swift; path = ../../../Downloads/codegen_611cd57ed177c/ApiResponse.swift; sourceTree = "<group>"; };
+		C44E5D0126CF93D0004E0A8E /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		C44E5D0226CF93D0004E0A8E /* CustomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewController.xib; sourceTree = "<group>"; };
+		C44E5D0626CF9902004E0A8E /* CustomDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetails.swift; sourceTree = "<group>"; };
 		E8DF72F3B7A7EE100F0C5B4A /* Pods_SimpleNetworkCallsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleNetworkCallsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F478AC79F14CEF2C0106C820 /* Pods-SimpleNetworkCallsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNetworkCallsExample.debug.xcconfig"; path = "Target Support Files/Pods-SimpleNetworkCallsExample/Pods-SimpleNetworkCallsExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,9 +111,12 @@
 				C44E5C7126CBA2FB004E0A8E /* SceneDelegate.swift */,
 				C44E5C7326CBA2FB004E0A8E /* ViewController.swift */,
 				C44E5C7526CBA2FB004E0A8E /* Main.storyboard */,
+				C44E5D0126CF93D0004E0A8E /* CustomViewController.swift */,
+				C44E5D0226CF93D0004E0A8E /* CustomViewController.xib */,
 				C44E5C7826CBA2FD004E0A8E /* Assets.xcassets */,
 				C44E5C7A26CBA2FD004E0A8E /* LaunchScreen.storyboard */,
 				C44E5C7D26CBA2FD004E0A8E /* Info.plist */,
+				C44E5D0626CF9902004E0A8E /* CustomDetails.swift */,
 			);
 			path = SimpleNetworkCallsExample;
 			sourceTree = "<group>";
@@ -174,6 +183,7 @@
 				C44E5C7C26CBA2FD004E0A8E /* LaunchScreen.storyboard in Resources */,
 				C44E5C7926CBA2FD004E0A8E /* Assets.xcassets in Resources */,
 				C44E5C7726CBA2FB004E0A8E /* Main.storyboard in Resources */,
+				C44E5D0426CF93D0004E0A8E /* CustomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +243,8 @@
 				C44E5CC226CCD641004E0A8E /* AppConfig.swift in Sources */,
 				C44E5CD626CD0D1A004E0A8E /* Company.swift in Sources */,
 				C44E5C7026CBA2FB004E0A8E /* AppDelegate.swift in Sources */,
+				C44E5D0726CF9902004E0A8E /* CustomDetails.swift in Sources */,
+				C44E5D0326CF93D0004E0A8E /* CustomViewController.swift in Sources */,
 				C44E5CD726CD0D1A004E0A8E /* Address.swift in Sources */,
 				C44E5C7226CBA2FB004E0A8E /* SceneDelegate.swift in Sources */,
 				C44E5CD826CD0D1A004E0A8E /* Geo.swift in Sources */,

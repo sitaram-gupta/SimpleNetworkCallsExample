@@ -16,13 +16,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
-    let userDefaults = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        let url = "https://jsonplaceholder.typicode.com/users"
+        //        let url = "https://jsonplaceholder.typicode.com/users"
         
         //                        getData(from: url)
         //        getDataUsingAlamofire(from: url)
@@ -30,30 +29,36 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         
         getDataFromMyData()
         
-//        textField.delegate = self
+        //        textField.delegate = self
         textView.delegate = self
+        textView.text = "Type right here to save..."
+        textView.textColor = UIColor.lightGray
         
-        if let value = userDefaults.value(forKey: "name") as? String{
+        if let value = UDM.shared.defaults.value(forKey: "name") as? String{
             label.text = value
         }
         
     }
     // This is for the text field of one line text only
-//    private func textFieldShouldReturn(_ textField: UITextField) -> String {
-//        userDefaults.setValue(textField.text, forKey: "name")
-//        textField.resignFirstResponder() // to hide keyboard after return tap
-//
-//        return (textField.text)!
-//    }
+    //    private func textFieldShouldReturn(_ textField: UITextField) -> String {
+    //        userDefaults.setValue(textField.text, forKey: "name")
+    //        textField.resignFirstResponder() // to hide keyboard after return tap
+    //
+    //        return (textField.text)!
+    //    }
     
-   
-//    func textViewDidBeginEditing(textView: UITextView) {
-//        textView.text = String()
-//    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
     
     
     @IBAction func saveText(_ sender: Any) {
-        userDefaults.setValue(textView.text, forKey: "name")
+        UDM.shared.defaults.setValue(textView.text, forKey: "name")
         textView.text = String()
         print("Saved")
     }
@@ -158,6 +163,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             
         })
         task.resume()
+    }
+}
+
+class UDM {
+    static let shared = UDM()
+    
+    let defaults  = UserDefaults(suiteName: "com.test.saved.data")!
+    
+    
+    //Other funcs
+    
+    func getName(_ key: String) -> String {
+        (UDM.shared.defaults.value(forKey: key) as? String)!
     }
 }
 
